@@ -10,12 +10,11 @@
   <input type="text" name="name" value="<%= @song.name%>">
 
   Please type in the artist name to edit: <input type="text" name="Artist Name">
-<br>
- <%Genre.all.each do |genre| %>
+  <br>
+  <%Genre.all.each do |genre| %>
         <input type="checkbox" name="genres[]" id="<%= genre.name %>" value="<%=genre.id%>"
-        <%='checked' if @song.genres.include?(genre) %>><%=genre.name%></input>
+        	<%='checked' if (@song.genres.include?(genre)) %>><%=genre.name%></input>
       <%end%>
-
 
   <input type="submit" value="Save">
   </form>
